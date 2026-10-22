@@ -1,0 +1,15 @@
+[Unit]
+Description=Mount unit for azimuth, revision 126
+After=snapd.mounts-pre.target
+Before=snapd.mounts.target
+
+[Mount]
+What=/var/lib/snapd/snaps/azimuth_126.snap
+Where=/snap/azimuth/126
+Type=squashfs
+Options=nodev,ro,x-gdu.hide,x-gvfs-hide
+LazyUnmount=yes
+
+[Install]
+WantedBy=snapd.mounts.target
+WantedBy=multi-user.target
